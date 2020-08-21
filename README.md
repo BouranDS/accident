@@ -9,12 +9,12 @@ The goal of accident is to read and analyze the accidents data i, USA through th
 
 ## Installation
 
-You can install the released version of accident from [CRAN](https://CRAN.R-project.org) with:
+You can not install the released version of accident from [CRAN](https://CRAN.R-project.org) with:
 
 ``` {r echo TRUE}
 install.packages("accident")
 ```
-
+Because this package doesn't exist really. It was created by John Hopkin university in order to evaluate the programming skill of student who attend to R package course.
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
