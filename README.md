@@ -2,6 +2,7 @@
 # accident
 
 <!-- badges: start -->
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/bouranDS/accident?branch=master&svg=true)](https://ci.appveyor.com/project/bouranDS/accident)
 <!-- badges: end -->
 
 The goal of accident is to read and analyze the accidents data i, USA through the years.
