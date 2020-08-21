@@ -1,0 +1,82 @@
+---
+title: "fars Package"
+author: I. B. SIDIBE
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{fars_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(accident)
+```
+## Aims of the package
+This package is made by John Hopkin university in order to evaluate the ability of students on the online R programming specialisation. This package allows to manage accidents data recorded in USA between 2013 and 2015 through the use of functions such as:
+* fars_read
+* fars_read_years
+* make_filename
+* fars_summarize_years
+* fars_mao_state
+# function fars_read
+Read csv file if it exist in table format and creates a data frame from it. In order to realize that operation the fars_read needs a parameter _filename_. In fact function return data frame object if the _filename_ exists and rises an error otherwise.
+```{r eval = FALSE}
+install.packages(
+  c("readr", "dplyr")
+)
+
+```
+#
+```{r eval = FALSE}
+library("readr")
+library("dplyr")
+
+```
+* simple example 
+```{r eval = FALSE}
+fars_read(filename = "my_data.csv")
+```
+# function make_filename
+make_filename allows to Create character string which fits the filename of data base in the present package. This function uses only one parameter denoted _year_ which is an integer value, stands for the  corresponding year and allows to load the accident data from this year.
+* simple example
+```{r eval = FALSE}
+make_filename(year = 2013)
+```
+# function fars_read_years
+The function fars_read_years takes list of years as paramater and returns a data frame for each year that contains 2 columns denoted by the year and the Month during them at least an accident is recorded.
+* simple example
+```{r eval = FALSE}
+library("dplyr")
+library("magrittr")
+library("rlang")
+fars_read_years(years = c(2013, 2014, 2015))
+```
+# function fars_summarize_years
+Function fars_summarize_years Creates Cross table to Compare the couple of year and month according to the number of accidents. Roughly speaking, this function proposes a contingence table whose row is year and column represents the months in which the number of accidents are described. To perform that, fars_summarize_years uses a list or vector of years as parameter.
+* Simple example
+```{r eval = FALSE}
+library("tidyr")
+fars_summarize_years(years = c(2013, 2014, 2015))
+```
+# function fars_map_state
+fars_map_state function draws USA Map and add information on the number of accidents by depicting their location on the map. The function uses two parameters whose values stand for the state number and the year denoted by _state.num_ and _year_.
+* Simple example 
+```{r eval = FALSE}
+library(maps)
+fars_map_state(state.num = 2, year = 2013)
+```
+
+
+## Data on the package
+The package contains a set of data on the accident through the US country. Each data represents the information accident for a year amongs 2013, 2014, 2015. The datasets are denoted
+* accident_2013
+* accident_2014
+* accident_2015
+
